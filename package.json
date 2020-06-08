@@ -1,7 +1,7 @@
 {
   "name": "js-mentoring-program",
-  "version": "1.1.0",
-  "description": "Repository for learning tasks",
+  "version": "1.0",
+  "description": "Personal repository for learning tasks",
   "main": "index.js",
   "scripts": {
     "test:cycles": "mocha tasks/cycles/test/*.spec.js",
@@ -18,7 +18,8 @@
   },
   "authors": [
     "Dzmitry_Shaplyka@epam.com",
-    "Oleksandr_Halichenko@epam.com"
+    "Oleksandr_Halichenko@epam.com",
+    "Maksim_Strakh@epam.com"
   ],
   "license": "ISC",
   "dependencies": {
