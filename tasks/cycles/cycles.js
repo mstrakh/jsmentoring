@@ -15,21 +15,22 @@ function calculateDiscount(redemption) {
   let discount;
   if (typeof redemption === "number") {
     redemption = (Math.floor(redemption)); // in order for number type to become integer to match rules
-    if (redemption >= 6501 & redemption <= 9999) {
-      discount = 60;
-    } else if (redemption >= 2701 & redemption <= 6500) {
-      discount = 45;
-    } else if (redemption >= 1351 & redemption <= 2700) {
-      discount = 30;
-    } else if (redemption >= 351 & redemption <= 1350) {
-      discount = 15;
-    } else if (redemption >= 0 & redemption <= 350) {
-      discount = 0;
-    }
-    return discount;
   } else if (typeof redemption === "string") {
-    return 0;
+    return (discount = 0);
   }
+
+  if (redemption >= 6501 & redemption <= 9999) {
+    discount = 60;
+  } else if (redemption >= 2701 & redemption <= 6500) {
+    discount = 45;
+  } else if (redemption >= 1351 & redemption <= 2700) {
+    discount = 30;
+  } else if (redemption >= 351 & redemption <= 1350) {
+    discount = 15;
+  } else if (redemption >= 0 & redemption <= 350) {
+    discount = 0;
+  }
+  return discount;
 }
 
 /** TODO
@@ -99,3 +100,5 @@ function calculateDiscount(redemption) {
 }
 
 module.exports = calculateDiscount;
+let value = 2700.1;
+console.log(calculateDiscount(value));
