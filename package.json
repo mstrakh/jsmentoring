@@ -1,10 +1,10 @@
 {
   "name": "js-mentoring-program",
-  "version": "1.0",
+  "version": "1.0.3",
   "description": "Personal repository for learning tasks",
   "main": "index.js",
   "scripts": {
-    "test:cycles": "mocha tasks/cycles/test/*.spec.js",
+    "test:cycles": "mocha tasks/cycles/test/cycles.spec.js",
     "test:functions": "mocha tasks/functions/test/*.spec.js",
     "test:arrays": "mocha tasks/arrays/test/*.spec.js",
     "test:strings": "mocha tasks/strings/test/*.spec.js",
