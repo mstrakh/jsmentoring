@@ -1,6 +1,6 @@
 {
   "name": "js-mentoring-program",
-  "version": "1.0",
+  "version": "1.0.3",
   "description": "Personal repository for learning tasks",
   "main": "index.js",
   "scripts": {

@@ -4,14 +4,10 @@
  * Task - rewrite IF..ELSE to ternary operator
  */
 {
-  const a = 3,
-        b = 2;
+  const a = 3;
+  const b = 2;
 
-  if (a + b < 4) {
-    console.log('wrong');
-  } else {
-    console.log('too much');
-  }
+  console.log((a + b < 4) ? 'wrong' : 'too much');
 }
 
 /** TODO
@@ -20,9 +16,29 @@
  * Task 1 - if else
  * Task 2 - ternary operator
  */
+
+//TASK 1
 {
-    const x = 3;
-    const y = 7;
+  const x = 3;
+  const y = 7;
+  let z;
+
+  if (x < 10 & y < 10) {
+    z = x + y;
+  } else if (x >= 10 & y >= 10) {
+    z = x * y;
+  }
+  console.log(z);
+}
+
+//TASK 2
+{
+  const x = 3;
+  const y = 7;
+  let z;
+
+  z = (x < 10 & y < 10) ? x + y : (x >= 10 & y >= 10 ? x * y : undefined);
+  console.log(z);
 }
 
 /** TODO
@@ -32,7 +48,28 @@
  */
 
 {
-    const x = 3;
-    const y = 7;
-    const operator = "add";
+  const x = 3;
+  const y = 7;
+  const operator = "add";
+  let result;
+
+  switch (operator) {
+    case "add":
+      result = x + y;
+      break;
+    case "subtract":
+      result = x - y;
+      break;
+
+    case "multiply":
+      result = x * y;
+      break;
+    case "divide":
+      result = x / y;
+      break;
+
+    default:
+      break;
+  }
+  console.log(result);
 }
