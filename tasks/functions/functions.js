@@ -106,7 +106,10 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		Object.keys(this).map(item => console.log(item));
+		const keysArray = Object.keys(this);
+		for (const item of keysArray) {
+			console.log(item);
+		}
 	},
 	call() {
 		return `My name is ${this.name} ${this.lastName} and I am ${this.age} years old. My best friend is ${this.friends[2]}`;
