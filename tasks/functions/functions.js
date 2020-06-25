@@ -3,7 +3,7 @@
  *
  */
 function add(a, b) {
-
+	return (a + b);
 }
 
 /**
@@ -15,7 +15,7 @@ function add(a, b) {
  * }
  */
 function getFullName(object) {
-
+	return (object.firstName + " " + object.lastName);
 }
 
 /**
@@ -23,7 +23,7 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	return (n % 2 == 1);
 }
 
 /**
@@ -31,7 +31,12 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-
+	let result = wordArray[0];
+	for (let i = 1; i < wordArray.length; i++) {
+		const elem = wordArray[i];
+		result = (result.length > elem.length) ? elem : result;
+	}
+	return result;
 }
 
 /**
@@ -39,7 +44,8 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+	const o = "o";
+	return `g${o.repeat(n)}gle`;
 }
 
 /**
@@ -51,8 +57,12 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
+function getUser(firstName = null, lastName = null, age = null) {
+	return {
+		"firstName": firstName,
+		"lastName": lastName,
+		"age": age
+	};
 }
 
 /**
@@ -62,7 +72,11 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-
+	let totalPath = 0;
+	for (const object of path) {
+		totalPath += object.distance;
+	}
+	return totalPath;
 }
 
 /**
@@ -72,8 +86,11 @@ function getTotalPath(path) {
  * @param {percentage} num 
  */
 
-function discountFunction(amount) {
-
+function discountFunction(percentage) {
+	const discountRate = percentage/100;
+	return function (amount) {
+		return (1 - discountRate) * amount;
+	}
 }
 
 /**
@@ -89,10 +106,10 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		//write your code here
+		Object.keys(this).map(item => console.log(item));
 	},
 	call() {
-		//write your code here
+		return `My name is ${this.name} ${this.lastName} and I am ${this.age} years old. My best friend is ${this.friends[2]}`;
 	}
 
 };
