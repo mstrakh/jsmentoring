@@ -4,15 +4,20 @@
  * @param {string} str
  */
 function reverseString(str) {
+  if (typeof str !== "string") {
+    return 'This is not a string!';
+  }
+  return str.split("").reverse().join("");
 }
 
 /**
  * 1. Calculate a century by given year
  * if a number is passed
-* @param {number} year
-*/
+ * @param {number} year
+ */
 function centuryFromYear(year) {
-
+  const yearAsInt = parseInt(year);
+  return Math.ceil(yearAsInt / 100);
 }
 
 /**
@@ -20,7 +25,15 @@ function centuryFromYear(year) {
  * @param {string} str
  * @param {string} char
  */
-function strCount(str, char) {
+function strCount(str, char) {
+  const stringAsArray = str.split("");
+  const reducer = function (accumulator, currentValue) {
+    if (currentValue === char) {
+      accumulator++;
+    }
+    return accumulator;
+  };
+  return stringAsArray.reduce(reducer, 0);
 }
 
 /**
@@ -29,7 +42,14 @@ function strCount(str, char) {
  * @param {string} str - the initial string
  * @param {num} num - by wht amount of chars it should be truncated
  */
-function truncateString(str, num) {
+function truncateString(str, num) {
+  const strLength = str.length;
+  if (strLength <= num) {
+    return str;
+  }
+
+  const truncatedStr = str.slice(0, num);
+  return `${truncatedStr}...`;
 }
 
 /**
@@ -40,7 +60,8 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-
+  const regex = /10/g;
+  return text.replace(regex, 'ten');
 }
 
 /**
@@ -51,6 +72,8 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
+  const regex = /\[[^\]]+\]/g;
+  return text.replace(regex, "[CONFIDENTIAL]");
 
 }
 

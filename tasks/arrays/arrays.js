@@ -4,6 +4,7 @@
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
+    return chars.map(char => char.name);
 }
 
 /**
@@ -11,6 +12,9 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
+    chars.forEach(char => {
+        console.log(char.name);
+    });
 }
 
 /**
@@ -19,6 +23,7 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
+    return chars.filter(char => char.species !== "Human");
 }
 
 /**
@@ -27,6 +32,7 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
+    return chars.find(char => char.name === "Jerry Smith");
 }
 
 /**
@@ -35,6 +41,8 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
+    const isAllHumanTest = (char) => char.species === "Human";
+    return chars.every(isAllHumanTest);
 }
 
 /**
@@ -43,6 +51,8 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
+    const isAnyFishPersonTest = (char) => char.type === "Fish-Person";
+    return chars.some(isAnyFishPersonTest);
 }
 
 /**
@@ -51,7 +61,11 @@ function isAnyFishPerson(chars) {
  * @return {number} - minimum element index
  */
 function minItem(arr) {
-    //PLACE YOUR CODE HERE
+    const arr1 = arr.map(el => el);
+    const compareFunc = (a, b) => a - b;
+    arr1.sort(compareFunc);
+    const minValue = arr.indexOf(arr1[0]);
+    return minValue;
 }
 
 module.exports = {
