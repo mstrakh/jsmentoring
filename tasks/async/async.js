@@ -28,8 +28,7 @@ function printDataPromise() {
  * console.log data got from promiseFunction using async/await
  */
 async function printDataAsyncAwait() {
-    const promise1 = await promiseFunction();
-    const result = await promise1;
+    const result = await promiseFunction();
     console.log(result);
 }
 
